@@ -4,7 +4,6 @@ import {
   JoinTable,
   ManyToMany,
   ManyToOne,
-  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { User } from './user.entity';
@@ -30,8 +29,8 @@ export class Post {
   @ManyToOne(() => User, (user) => user.posts)
   user: User;
 
-  @Field(() => Tag)
+  @Field(() => [Tag ])
   @ManyToMany(() => Tag, (tag) => tag.posts)
   @JoinTable()
-  tags: Tag;
+  tags: Tag[];
 }
