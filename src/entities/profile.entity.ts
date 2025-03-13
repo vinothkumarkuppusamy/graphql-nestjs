@@ -26,5 +26,5 @@ export class Profile {
 
   @Field(()=>User)
   @OneToOne(() => User, (user) => user.profile)
-  user: User;
+  user: Promise<User>;   // reduce lazy loading
 }

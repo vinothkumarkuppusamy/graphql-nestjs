@@ -42,7 +42,8 @@ export class User {
   @Field(()=> Profile)
   @OneToOne(() => Profile, (profile)=> profile.user, {cascade: true})
   @JoinColumn()
-  profile: Promise<Profile>;
+  profile: Promise<Profile>; // leveraging the lazy loading feature of typeORM
+   
 
   // @Column()
   // posts: post[]

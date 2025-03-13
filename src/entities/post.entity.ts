@@ -29,8 +29,8 @@ export class Post {
   @ManyToOne(() => User, (user) => user.posts)
   user: User;
 
-  @Field(() => [Tag ])
+  @Field(() => [Tag])
   @ManyToMany(() => Tag, (tag) => tag.posts)
   @JoinTable()
-  tags: Tag[];
+  tags: Promise<Tag[]>;
 }

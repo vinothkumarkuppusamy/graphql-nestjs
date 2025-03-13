@@ -16,5 +16,5 @@ export class Tag {
 
     @Field(()=>[Post])
     @ManyToMany(()=>Post, (posts)=> posts.tags)
-    posts: Post[]
+    posts: Promise<Post[]>
 }
